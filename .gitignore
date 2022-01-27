@@ -1,4 +1,5 @@
 poetry.lock
+/static
 
 *.env
 # Byte-compiled / optimized / DLL files
