@@ -20,6 +20,7 @@ install:  install-deps install-deps-dev
 ## @ run
 .PHONY: run
 run:
+	${POETRY} python manage.py makemigrations
 	${POETRY} python manage.py migrate
 	${POETRY} python manage.py collectstatic --no-input
 	${POETRY} python manage.py runserver
