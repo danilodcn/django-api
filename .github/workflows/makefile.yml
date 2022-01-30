@@ -31,6 +31,4 @@ jobs:
       
     - name: Run check
       run: |
-        make lint_black
-        make flake
-        make lint_isort
+        make analitics
