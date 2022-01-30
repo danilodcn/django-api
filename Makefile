@@ -42,7 +42,7 @@ mypy:
 	${POETRY} mypy .
 lint_isort:
 	${POETRY} isort ${ISORT_FLAGS} --check .
-analitics: lint_black flake mypy lint_isort ## run the sintatic analicts: black, flake8, mypy, isort
+analitics: lint_black flake lint_isort ## run the sintatic analicts: black, flake8, mypy, isort
 
 ## @ formatation
 .PHONY: black isort format
