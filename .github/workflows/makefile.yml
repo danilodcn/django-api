@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install poetry
-        apt install make
+        apt-get install make
         make
       
     - name: Install devs dependences
