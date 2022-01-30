@@ -8,14 +8,23 @@ on:
 
 jobs:
   build:
-
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
 
     - name: Install dependencies
-      run: make
+      run: |
+        pip install poetry
+        apt install make
+        make
       
     - name: Install devs dependences
       run: make install-deps-dev
