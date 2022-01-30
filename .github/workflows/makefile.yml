@@ -24,10 +24,7 @@ jobs:
       run: |
         pip install poetry
         sudo apt-get install make
-    - name: Create poetry venv
-      run: |
-        poetry shell 
-      
+
     - name: Install devs dependences
       run: make install-deps-dev
       
