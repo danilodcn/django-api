@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
         python-version: 3.9
@@ -26,7 +26,11 @@ jobs:
         sudo apt-get install make
 
     - name: Install devs dependences
-      run: make install-deps-dev
+      run: |
+        make install-deps-dev
       
     - name: Run check
-      run: make analitcs
+      run: |
+        make lint_black
+        make flake
+        make lint_isort
